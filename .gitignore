@@ -1,0 +1,10 @@
+.env
+*.csv
+*.json
+*.sqlite
+*.db
+data/
+dataset.xlsx
+data/
+!data/schema.json
+node_modules
