@@ -35,7 +35,7 @@
 //        });
 
 // export {uploadToCloudinary}
-
+import "dotenv/config";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -47,7 +47,7 @@ cloudinary.config({
 const uploadToCloudinary = async (localFilePath) => {
     try {
         if (!localFilePath) return null;
-
+        console.log(`upload started!`)
         const response = await cloudinary.uploader.upload(localFilePath, {
             resource_type: "auto",
         });

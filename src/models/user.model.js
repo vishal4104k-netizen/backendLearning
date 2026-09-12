@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema(
         trim: true,
         index: true,
     },
-    avtar: {
+    avatar: {
         type: String,
         required: true,
     },
@@ -80,11 +80,11 @@ userSchema.methods.generateRefreshToken = function () {
         {
             _id: this._id,
         },
-        process.env.ACCESS_TOKEN_SECRET,
+        process.env.REFRESH_TOKEN_SECRET,
         {
-            expiresIn: process.env.ACCESS_TOKEN_EXPIRY, 
+            expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
         }
-    )
-}
+    );
+};
 
 export const User = mongoose.model("User", userSchema);
